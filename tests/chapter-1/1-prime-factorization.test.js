@@ -1,9 +1,7 @@
 import { primeFactors, formatFactorization } from 'chapter-1/1-prime-factorization.js'
 import { describe, expect, it } from 'vitest'
 
-// import { formatFactorization, primeFactors } from "../../src/chapter-1/1-prime-factorization"
-
-describe('bai-01: prime factorization', () => {
+describe('prime factorization', () => {
   it.each([
     [2, '2'],
     [12, '2^2*3'],
