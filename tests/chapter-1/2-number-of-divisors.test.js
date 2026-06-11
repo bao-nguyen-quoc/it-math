@@ -28,7 +28,7 @@ const TEST_CASES = [
 describe('number of divisors', () => {
   describe('countDivisors', () => {
     it.each(TEST_CASES.map(([n, count]) => [n, count]))(
-      'Count divisors of ',
+      'Count divisors of %i',
       (n, expectedCount) => {
         expect(countDivisors(primeFactors(n))).toBe(expectedCount)
       },
@@ -36,7 +36,7 @@ describe('number of divisors', () => {
   })
 
   describe('listDivisors', () => {
-    it.each(TEST_CASES)('List divisors of ', (n, _count, expectedDivisors) => {
+    it.each(TEST_CASES)('List divisors of %i', (n, _count, expectedDivisors) => {
       expect(listDivisors(primeFactors(n))).toEqual(expectedDivisors)
     })
   })

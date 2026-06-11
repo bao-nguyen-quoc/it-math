@@ -11,7 +11,7 @@ describe('prime factorization', () => {
     [1001, '7*11*13'],
     [99991, '99991'],
     [1_000_000, '2^6*5^6'],
-  ])('primeFactors(%i) → "%s"', (n, expected) => {
+  ])('Prime factors of %i', (n, expected) => {
     const result = formatFactorization(primeFactors(n))
     expect(result).toBe(expected)
   })
