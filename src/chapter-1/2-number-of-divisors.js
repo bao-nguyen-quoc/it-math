@@ -7,7 +7,7 @@ import { primeFactors } from './1-prime-factorization.js'
 
 /**
  * Count number of devisors
- * @param {Object.<number, number>} factorsMap - Number (integer greater than 1)
+ * @param {Object.<number, number>} factorsMap - Object mapping prime factors to their exponents
  * @returns
  */
 function countDivisors(factorsMap) {
