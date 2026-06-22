@@ -14,7 +14,13 @@ import { countDivisors } from './2-number-of-divisors.js'
 function productDivisors(n) {
   const factorsMap = primeFactors(n)
   const numOfDivisors = countDivisors(factorsMap)
-  return n ** (numOfDivisors / 2)
+
+  if (numOfDivisors % 2 === 0) {
+    return n ** (numOfDivisors / 2)
+  } else {
+    const sqrt = Math.round(Math.sqrt(n))
+    return n ** ((numOfDivisors - 1) / 2) * sqrt
+  }
 }
 
 // const rl = createInterface({ input: process.stdin, output: process.stdout })
