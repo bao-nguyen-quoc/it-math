@@ -32,6 +32,15 @@ function sieveOfEratosthenes(n) {
   return { count, sieve }
 }
 
+/**
+ * Approximate the number of primes up to N using formula in the "Density of primes" slide.
+ * @param {number} n - Upper bound (inclusive), integer greater than 1
+ * @returns {number} - Approximate count of primes up to N (rounded to nearest integer)
+ */
+function approximateNumberOfPrimes(n) {
+  return Math.round(n / Math.log(n))
+}
+
 // const rl = createInterface({ input: process.stdin, output: process.stdout })
 
 // function ask() {
@@ -43,7 +52,9 @@ function sieveOfEratosthenes(n) {
 //       return ask()
 //     } else {
 //       const { count } = sieveOfEratosthenes(n)
-//       console.log(`Number of primes from 1 to ${n}: ${count}`)
+//       const approximateNumber = approximateNumberOfPrimes(n)
+//       console.log(`Exact number of primes from 1 to ${n}: ${count}`)
+//       console.log(`Approximate number of primes from 1 to ${n}: ${approximateNumber}`)
 //       rl.close()
 //     }
 //   })
@@ -51,4 +62,4 @@ function sieveOfEratosthenes(n) {
 
 // ask()
 
-export { sieveOfEratosthenes }
+export { approximateNumberOfPrimes, sieveOfEratosthenes }
