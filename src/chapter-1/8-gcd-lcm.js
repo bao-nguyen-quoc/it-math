@@ -53,6 +53,33 @@ function lcmByPrimeFactors(a, b) {
   return { lcm, factorsMap: lcmMap }
 }
 
+/**
+ * Compute GCD of two integers using the Euclidean algorithm.
+ * Repeatedly replaces (a, b) with (b, a mod b) until b reaches 0.
+ *
+ * @param {number} a - First positive integer (> 1)
+ * @param {number} b - Second positive integer (> 1)
+ * @returns {number} - GCD value
+ */
+function gcdByEuclid(a, b) {
+  while (b !== 0) {
+    ;[a, b] = [b, a % b]
+  }
+  return a
+}
+
+/**
+ * Compute LCM of two integers using the Euclidean algorithm.
+ * Uses the identity: LCM(a, b) = (a / GCD(a, b)) * b  to avoid overflow.
+ *
+ * @param {number} a - First positive integer (> 1)
+ * @param {number} b - Second positive integer (> 1)
+ * @returns {number} - LCM value
+ */
+function lcmByEuclid(a, b) {
+  return (a / gcdByEuclid(a, b)) * b
+}
+
 // const rl = createInterface({ input: process.stdin, output: process.stdout })
 
 // function askNumber(prompt) {
@@ -73,19 +100,18 @@ function lcmByPrimeFactors(a, b) {
 //   const a = await askNumber('Enter first integer A (A > 1): ')
 //   const b = await askNumber('Enter second integer B (B > 1): ')
 
-//   console.log(`\nPrime factorization of ${a}: ${a} = ${formatFactorization(primeFactors(a))}`)
-//   console.log(`Prime factorization of ${b}: ${b} = ${formatFactorization(primeFactors(b))}`)
-
 //   const { gcd, factorsMap: gcdMap } = gcdByPrimeFactors(a, b)
 //   const { lcm, factorsMap: lcmMap } = lcmByPrimeFactors(a, b)
 
 //   const gcdExpr = Object.keys(gcdMap).length === 0 ? '1' : formatFactorization(gcdMap)
-//   console.log(`\nGCD(${a}, ${b}) = ${gcdExpr} = ${gcd}`)
+//   console.log(`GCD(${a}, ${b}) = ${gcdExpr} = ${gcd}`)
 //   console.log(`LCM(${a}, ${b}) = ${formatFactorization(lcmMap)} = ${lcm}`)
+//   console.log(`GCD by Euclid: ${gcdByEuclid(a, b)}`)
+//   console.log(`LCM by Euclid: ${lcmByEuclid(a, b)}`)
 
 //   rl.close()
 // }
 
 // main()
 
-export { gcdByPrimeFactors, lcmByPrimeFactors }
+export { gcdByPrimeFactors, lcmByPrimeFactors, gcdByEuclid, lcmByEuclid }
