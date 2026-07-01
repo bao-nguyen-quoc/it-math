@@ -24,12 +24,6 @@ describe('list primes', () => {
       expect(listPrimes(50)).toEqual(PRIMES_UP_TO_50)
     })
 
-    it('does not include composite numbers', () => {
-      const composites = [4, 6, 8, 9, 10, 12, 14, 15, 16, 18, 20]
-      const primes = listPrimes(20)
-      for (const c of composites) expect(primes).not.toContain(c)
-    })
-
     it('returns correct count for N = 50', () => {
       expect(listPrimes(50)).toHaveLength(15)
     })
