@@ -1,8 +1,5 @@
 // Viết chương trình phân tích số nguyên N (N > 1) thành tích các thừa số nguyên tố
 
-// eslint-disable-next-line no-unused-vars
-import { createInterface } from 'node:readline'
-
 /**
  * Get array of prime factors (with repetition) of a given integer n > 1.
  * @param {number} n - Input number, integer greater than 1
@@ -50,24 +47,5 @@ function formatFactorization(map) {
 
   return `${expr}`
 }
-
-// const rl = createInterface({ input: process.stdin, output: process.stdout })
-
-// function ask() {
-//   rl.question('Enter integer N (N > 1): ', (input) => {
-//     const n = Number(input.trim())
-
-//     if (!Number.isInteger(n) || n <= 1) {
-//       console.error(`Invalid value: ${input.trim()}. Please enter an integer greater than 1.`)
-//       ask() // Ask again
-//     } else {
-//       const factorsMap = primeFactors(n)
-//       console.log(`${n} = ${formatFactorization(factorsMap)}`)
-//       rl.close()
-//     }
-//   })
-// }
-
-// ask()
 
 export { primeFactors, formatFactorization }
