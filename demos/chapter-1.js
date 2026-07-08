@@ -1,27 +1,20 @@
-// Unified CLI runner for Chapter 1 exercises
-// Usage: node demos/chapter-1/demo.js <exercise>
-//
-// Examples:
-//   node demos/chapter-1/demo.js 1
-//   node demos/chapter-1/demo.js prime-factorization
-
 import { createInterface } from 'node:readline/promises'
-import { primeFactors, formatFactorization } from '../../src/chapter-1/1-prime-factorization.js'
-import { countDivisors, listDivisors } from '../../src/chapter-1/2-number-of-divisors.js'
-import { sumDivisors } from '../../src/chapter-1/3-sum-of-divisors.js'
-import { productDivisors } from '../../src/chapter-1/4-product-of-divisors.js'
-import { isPerfect, isPerfectBruteForce } from '../../src/chapter-1/5-perfect-number.js'
+import { primeFactors, formatFactorization } from '../src/chapter-1/1-prime-factorization.js'
+import { countDivisors, listDivisors } from '../src/chapter-1/2-number-of-divisors.js'
+import { sumDivisors } from '../src/chapter-1/3-sum-of-divisors.js'
+import { productDivisors } from '../src/chapter-1/4-product-of-divisors.js'
+import { isPerfect, isPerfectBruteForce } from '../src/chapter-1/5-perfect-number.js'
 import {
   sieveOfEratosthenes,
   approximateNumberOfPrimes,
-} from '../../src/chapter-1/6-number-of-primes.js'
-import { listPrimes } from '../../src/chapter-1/7-list-primes.js'
+} from '../src/chapter-1/6-number-of-primes.js'
+import { listPrimes } from '../src/chapter-1/7-list-primes.js'
 import {
   gcdByPrimeFactors,
   lcmByPrimeFactors,
   gcdByEuclid,
   lcmByEuclid,
-} from '../../src/chapter-1/8-gcd-lcm.js'
+} from '../src/chapter-1/8-gcd-lcm.js'
 
 // ── Helpers ──────────────────────────────────────────────────────────────
 
