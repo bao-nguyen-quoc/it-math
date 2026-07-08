@@ -1,5 +1,6 @@
 // Nhập số N với N > 10^6, xác định gần đúng số lượng các số nguyên tố nhỏ hơn. Dùng 2 cách khác nhau
 // - Cách 1: Dùng Sieve of Eratosthenes
+// - Cách 2: Dùng công thức để tính tương đối
 
 /**
  * Count the number of primes from 1 to N using the Sieve of Eratosthenes.
