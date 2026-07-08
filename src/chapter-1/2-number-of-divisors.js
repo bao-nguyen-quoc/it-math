@@ -1,10 +1,5 @@
 // Nhập N từ bàn phím, tìm số lượng các ước số của N và liệt kê chúng
 
-// eslint-disable-next-line no-unused-vars
-import { createInterface } from 'node:readline'
-// eslint-disable-next-line no-unused-vars
-import { primeFactors } from './1-prime-factorization.js'
-
 /**
  * Count number of devisors
  * @param {Object.<number, number>} factorsMap - Object mapping prime factors to their exponents
@@ -41,28 +36,5 @@ function listDivisors(factorsMap) {
 
   return divisors.sort((a, b) => a - b)
 }
-
-// const rl = createInterface({ input: process.stdin, output: process.stdout })
-
-// function ask() {
-//   rl.question('Enter integer N (N > 1): ', (input) => {
-//     const n = Number(input.trim())
-
-//     if (!Number.isInteger(n) || n <= 1) {
-//       console.error(`Invalid value: "${input.trim()}". Please enter an integer greater than 1.`)
-//       return ask()
-//     } else {
-//       const factorsMap = primeFactors(n)
-//       const count = countDivisors(factorsMap)
-//       const divisors = listDivisors(factorsMap)
-
-//       console.log(`Number of divisors of ${n}: ${count}`)
-//       console.log(`Divisors: ${divisors.join(', ')}`)
-//       rl.close()
-//     }
-//   })
-// }
-
-// ask()
 
 export { countDivisors, listDivisors }

@@ -1,8 +1,5 @@
 // Kiểm tra một số có phải số hoàn hảo không.
 
-// eslint-disable-next-line no-unused-vars
-import { createInterface } from 'node:readline'
-
 import { primeFactors } from './1-prime-factorization.js'
 import { listDivisors } from './2-number-of-divisors.js'
 import { sumDivisors } from './3-sum-of-divisors.js'
@@ -31,26 +28,5 @@ function isPerfectBruteForce(n) {
   const sumOfDivisors = divisors.reduce((acc, d) => acc + d, 0)
   return n === sumOfDivisors - n
 }
-
-// const rl = createInterface({ input: process.stdin, output: process.stdout })
-
-// function ask() {
-//   rl.question('Enter integer N (N > 1): ', (input) => {
-//     const n = Number(input.trim())
-
-//     if (!Number.isInteger(n) || n <= 1) {
-//       console.error(`Invalid value: "${input.trim()}". Please enter an integer greater than 1.`)
-//       return ask()
-//     } else {
-//       let result = isPerfect(n)
-//       console.log(`${n} is${result ? '' : ' not'} a perfect number.`)
-//       result = isPerfectBruteForce(n)
-//       console.log(`${n} is${result ? '' : ' not'} a perfect number (brute force calc).`)
-//       rl.close()
-//     }
-//   })
-// }
-
-// ask()
 
 export { isPerfect, isPerfectBruteForce }

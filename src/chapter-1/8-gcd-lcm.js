@@ -2,10 +2,7 @@
 // - Cách 1: dùng phân tích thừa số nguyên tố
 // - Cách 2: dùng thuật toán Euclid
 
-// eslint-disable-next-line no-unused-vars
-import { createInterface } from 'node:readline'
-// eslint-disable-next-line no-unused-vars
-import { primeFactors, formatFactorization } from './1-prime-factorization.js'
+import { primeFactors } from './1-prime-factorization.js'
 
 /**
  * Compute GCD of two integers using their prime factorizations.
@@ -79,39 +76,5 @@ function gcdByEuclid(a, b) {
 function lcmByEuclid(a, b) {
   return (a / gcdByEuclid(a, b)) * b
 }
-
-// const rl = createInterface({ input: process.stdin, output: process.stdout })
-
-// function askNumber(prompt) {
-//   return new Promise((resolve) => {
-//     rl.question(prompt, (input) => {
-//       const n = Number(input.trim())
-//       if (!Number.isInteger(n) || n <= 1) {
-//         console.error(`Invalid value: "${input.trim()}". Please enter an integer greater than 1.`)
-//         resolve(askNumber(prompt)) // Ask again
-//       } else {
-//         resolve(n)
-//       }
-//     })
-//   })
-// }
-
-// async function main() {
-//   const a = await askNumber('Enter first integer A (A > 1): ')
-//   const b = await askNumber('Enter second integer B (B > 1): ')
-
-//   const { gcd, factorsMap: gcdMap } = gcdByPrimeFactors(a, b)
-//   const { lcm, factorsMap: lcmMap } = lcmByPrimeFactors(a, b)
-
-//   const gcdExpr = Object.keys(gcdMap).length === 0 ? '1' : formatFactorization(gcdMap)
-//   console.log(`GCD(${a}, ${b}) = ${gcdExpr} = ${gcd}`)
-//   console.log(`LCM(${a}, ${b}) = ${formatFactorization(lcmMap)} = ${lcm}`)
-//   console.log(`GCD by Euclid: ${gcdByEuclid(a, b)}`)
-//   console.log(`LCM by Euclid: ${lcmByEuclid(a, b)}`)
-
-//   rl.close()
-// }
-
-// main()
 
 export { gcdByPrimeFactors, lcmByPrimeFactors, gcdByEuclid, lcmByEuclid }
