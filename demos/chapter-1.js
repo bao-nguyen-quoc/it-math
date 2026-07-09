@@ -181,7 +181,7 @@ const exercises = {
     alias: 'chinese-remainder',
     run: async () => {
       console.log('Solve the system of congruences:')
-      console.log('  x ≡ a_i (mod m_i)  for i = 1..k\n')
+      console.log('  x ≡ a_i (mod m_i)  for i = 1..k')
 
       // const k = await askInteger(
       //   'How many equations? (k >= 2): ',
@@ -218,9 +218,9 @@ const exercises = {
 // ── CLI Entry Point ──────────────────────────────────────────────────────
 
 function showHelp() {
-  console.log('>>> Chapter 1 — Number Theory Exercises\n')
-  console.log('Usage: npm run demo:ch1 <exercise>\n')
-  console.log('Available exercises:\n')
+  console.log('>>> Chapter 1 - Number Theory Exercises')
+  console.log('Usage: npm run demo:ch1 <exercise>')
+  console.log('Available exercises:')
 
   for (const [num, { name, alias }] of Object.entries(exercises)) {
     console.log(`  ${num}  ${alias.padEnd(22)} ${name}`)
@@ -228,7 +228,7 @@ function showHelp() {
 
   console.log('>>> Examples:')
   console.log('  npm run demo:ch1 1')
-  console.log('  npm run demo:ch1 prime-factorization\n')
+  console.log('  npm run demo:ch1 prime-factorization')
 }
 
 async function main() {
@@ -244,12 +244,12 @@ async function main() {
     exercises[arg] || Object.values(exercises).find((e) => e.alias === arg.toLowerCase())
 
   if (!entry) {
-    console.error(`Unknown exercise: "${arg}"\n`)
+    console.error(`Unknown exercise: "${arg}"`)
     showHelp()
     process.exit(1)
   }
 
-  console.log(`>>> Exercise: ${entry.name}\n`)
+  console.log(`>>> Exercise: ${entry.name}`)
 
   try {
     await entry.run()

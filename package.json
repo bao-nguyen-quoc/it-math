@@ -21,6 +21,7 @@
     "test:watch": "vitest",
     "test:coverage": "vitest run --coverage",
     "demo:ch1": "node demos/chapter-1.js",
+    "demo:ch2": "node demos/chapter-2.js",
     "prepare": "husky"
   },
   "devDependencies": {
