@@ -1,8 +1,10 @@
 import { createInterface } from 'node:readline/promises'
 import {
+  validateSymmetric,
+  validatePositiveDefinite,
   classicCholesky,
+  variantCholesky,
   printMatrix,
-  validateSPD,
 } from '../src/chapter-2/1-cholesky-decomposition.js'
 
 // ── Helpers ──────────────────────────────────────────────────────────────
@@ -62,15 +64,24 @@ const exercises = {
     name: 'Cholesky Decomposition',
     alias: 'cholesky-decomposition',
     run: async () => {
-      console.log('Decompose a 3*3 symmetric positive definite matrix A = L * Lᵀ')
+      console.log('Decompose a 3*3 symmetric matrix using Cholesky methods')
 
       const A = await askMatrix3x3('Enter matrix A')
 
-      printMatrix(A, 'Input matrix A:')
+      printMatrix(A, 'Input matrix A')
 
-      validateSPD(A)
-      const L = classicCholesky(A)
-      printMatrix(L, 'Cholesky factor L:')
+      try {
+        validateSymmetric(A)
+        const { L: Lv, D } = variantCholesky(A)
+        printMatrix(Lv, 'Variant Cholesky method > Cholesky factor L')
+        console.log(`Variant Cholesky method > D = diag(${D.map((v) => v.toFixed(2)).join(', ')})`)
+
+        validatePositiveDefinite(A)
+        const L = classicCholesky(A)
+        printMatrix(L, 'Classic Cholesky method > Cholesky factor L')
+      } catch (error) {
+        console.log(error.message)
+      }
     },
   },
 }
