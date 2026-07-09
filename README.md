@@ -52,4 +52,17 @@ npm test -- tests/chapter-1/1-prime-factorization
 
 ## How to run
 
-_to be defined_
+```bash
+# Run the interactive demo for an exercise (by number or alias)
+npm run demo:ch2 <exercise>
+
+# Examples
+npm run demo:ch2 1
+npm run demo:ch2 cholesky-decomposition
+
+# Run all chapter 2 tests
+npm test -- tests/chapter-2
+
+# Run a specific exercise test
+npm test -- tests/chapter-2/1-cholesky-decomposition
+```
