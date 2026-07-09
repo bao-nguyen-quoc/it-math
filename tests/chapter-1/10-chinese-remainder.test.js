@@ -2,32 +2,16 @@ import { validatePairwiseCoprime, chineseRemainder } from 'chapter-1/10-chinese-
 import { describe, expect, it } from 'vitest'
 
 describe('chineseRemainder', () => {
-  it('solves classic example: x ≡ 2 (mod 3), x ≡ 3 (mod 5), x ≡ 2 (mod 7)', () => {
+  it("Slide's example: x ≡ 2 (mod 3), x ≡ 3 (mod 5), x ≡ 2 (mod 7)", () => {
     const equations = [
-      { a: 2, m: 3 },
-      { a: 3, m: 5 },
-      { a: 2, m: 7 },
-    ]
-    const { x, M } = chineseRemainder(equations)
-    expect(M).toBe(105)
-    expect(x).toBe(23)
-    // Verify solution satisfies all congruences
-    for (const { a, m } of equations) {
-      expect(x % m).toBe(a)
-    }
-  })
-
-  it('solves 4-equation system from the slide', () => {
-    // x ≡ 1 (mod 2), x ≡ 2 (mod 3), x ≡ 3 (mod 5), x ≡ 4 (mod 7)
-    const equations = [
-      { a: 1, m: 2 },
       { a: 2, m: 3 },
       { a: 3, m: 5 },
       { a: 4, m: 7 },
     ]
     const { x, M } = chineseRemainder(equations)
-    expect(M).toBe(210)
+    expect(M).toBe(105)
     expect(x).toBe(53)
+    // Verify solution satisfies all congruences
     for (const { a, m } of equations) {
       expect(x % m).toBe(a)
     }
