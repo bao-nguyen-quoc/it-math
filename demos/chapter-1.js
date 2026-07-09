@@ -15,6 +15,12 @@ import {
   gcdByEuclid,
   lcmByEuclid,
 } from '../src/chapter-1/8-gcd-lcm.js'
+import { countCoprime, listCoprime } from '../src/chapter-1/9-coprime.js'
+import {
+  validatePairwiseCoprime,
+  chineseRemainder,
+  printSolution,
+} from '../src/chapter-1/10-chinese-remainder.js'
 
 // ── Helpers ──────────────────────────────────────────────────────────────
 
@@ -151,6 +157,60 @@ const exercises = {
       console.log(`LCM(${a}, ${b}) = ${formatFactorization(lcmMap)} = ${lcm}`)
       console.log(`GCD by Euclid: ${gcdByEuclid(a, b)}`)
       console.log(`LCM by Euclid: ${lcmByEuclid(a, b)}`)
+    },
+  },
+
+  9: {
+    name: 'Coprime Numbers',
+    alias: 'coprime-numbers',
+    run: async () => {
+      const n = await askInteger(
+        'Enter integer N (N >= 100): ',
+        (n) => n >= 100,
+        'Invalid value: "%s". Please enter an integer >= 100.',
+      )
+      const count = countCoprime(n)
+      const coprimes = listCoprime(n)
+      console.log(`Number of integers coprime with ${n}: ${count}`)
+      console.log(`Integers coprime with ${n}: ${coprimes.join(', ')}`)
+    },
+  },
+
+  10: {
+    name: 'Chinese Remainder Theorem',
+    alias: 'chinese-remainder',
+    run: async () => {
+      console.log('Solve the system of congruences:')
+      console.log('  x ≡ a_i (mod m_i)  for i = 1..k\n')
+
+      // const k = await askInteger(
+      //   'How many equations? (k >= 2): ',
+      //   (n) => n >= 2,
+      //   'Invalid value: "%s". Please enter an integer >= 2.',
+      // )
+
+      // Uncomment above code if need to solve arbitrary number of equations
+      const k = 4
+
+      const equations = []
+      for (let i = 1; i <= k; i++) {
+        const a = await askInteger(
+          `  a${i} = `,
+          (n) => n >= 0,
+          'Invalid value: "%s". Please enter a non-negative integer.',
+        )
+        const m = await askInteger(
+          `  m${i} = `,
+          (n) => n > 0,
+          'Invalid value: "%s". Please enter a positive integer.',
+        )
+        equations.push({ a, m })
+      }
+
+      validatePairwiseCoprime(equations)
+      const solution = chineseRemainder(equations)
+      console.log()
+      printSolution(equations, solution)
     },
   },
 }
