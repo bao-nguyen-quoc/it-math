@@ -109,7 +109,7 @@ const DEFECTIVE = [
 
 describe('diagonalize', () => {
   describe('diagonalizable matrices', () => {
-    it('diagonalizes a diagonal matrix (A = P*D*P⁻¹)', () => {
+    it('diagonalizes a diagonal matrix (A = P*D*P^(-1))', () => {
       const result = diagonalize(DIAGONAL)
 
       expectDiagonal(result.D)

@@ -5,7 +5,7 @@
 import { det2, det3 } from './util.js'
 
 /**
- * Validate that a 3x3 matrix is symmetric: A[i][j] === A[j][i] for all i ≠ j.
+ * Validate that a 3x3 matrix is symmetric: A[i][j] === A[j][i] for all i != j.
  * Throws an error identifying the first violating pair.
  *
  * @param {number[][]} A - 3x3 matrix to validate
@@ -15,7 +15,7 @@ function validateSymmetric(A) {
     for (let j = i + 1; j < 3; j++) {
       if (A[i][j] !== A[j][i]) {
         throw new Error(
-          `Matrix is not symmetric: A[${i}][${j}]=${A[i][j]} ≠ A[${j}][${i}]=${A[j][i]}`,
+          `Matrix is not symmetric: A[${i}][${j}]=${A[i][j]} != A[${j}][${i}]=${A[j][i]}`,
         )
       }
     }

@@ -107,7 +107,7 @@ describe('validatePositiveDefinite', () => {
 })
 
 describe('classicCholesky', () => {
-  it('decomposes SPD_1 so that L * Lᵀ = A', () => {
+  it('decomposes SPD_1 so that L * L^T = A', () => {
     const L = classicCholesky(SPD_1)
     const reconstructed = multiply(L, transpose(L))
     expectMatrixClose(reconstructed, SPD_1)
@@ -130,7 +130,7 @@ describe('classicCholesky', () => {
 })
 
 describe('variantCholesky', () => {
-  it('decomposes SPD_1 so that L * D * Lᵀ = A', () => {
+  it('decomposes SPD_1 so that L * D * L^T = A', () => {
     const { L, D } = variantCholesky(SPD_1)
     const reconstructed = multiply(multiply(L, diagMatrix(D)), transpose(L))
     expectMatrixClose(reconstructed, SPD_1)

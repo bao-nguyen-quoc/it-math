@@ -88,7 +88,7 @@ const exercises = {
     name: 'Matrix Diagonalization',
     alias: 'matrix-diagonalization',
     run: async () => {
-      console.log('Diagonalize a 3*3 matrix: find P and D such that A = P*D*P⁻¹')
+      console.log('Diagonalize a 3*3 matrix: find P and D such that A = P*D*P^(-1)')
 
       const A = await askMatrix3x3('Enter matrix A')
 
