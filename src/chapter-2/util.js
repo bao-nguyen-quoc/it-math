@@ -26,6 +26,24 @@ function det3(A) {
 }
 
 /**
+ * Multiply two 3x3 matrices: C = A * B
+ * @param {Array<Array<number>>} A - First 3x3 matrix
+ * @param {Array<Array<number>>} B - Second 3x3 matrix
+ * @returns {Array<Array<number>>} Resultant 3x3 matrix
+ */
+function multiply(A, B) {
+  const C = Array.from({ length: 3 }, () => [0, 0, 0])
+  for (let i = 0; i < 3; i++) {
+    for (let j = 0; j < 3; j++) {
+      for (let k = 0; k < 3; k++) {
+        C[i][j] += A[i][k] * B[k][j]
+      }
+    }
+  }
+  return C
+}
+
+/**
  * Print a matrix to the console with aligned columns.
  *
  * @param {number[][]} M - Matrix to print
@@ -38,4 +56,13 @@ function printMatrix(M, label) {
   }
 }
 
-export { det2, det3, printMatrix }
+/**
+ * Transpose a 3x3 matrix
+ * @param {Array<Array<number>>} M - Input array of 3x3 matrix
+ * @returns {Array<Array<number>>} Transposed matrix
+ */
+function transpose(M) {
+  return M[0].map((_, j) => M.map((row) => row[j]))
+}
+
+export { det2, det3, multiply, printMatrix, transpose }

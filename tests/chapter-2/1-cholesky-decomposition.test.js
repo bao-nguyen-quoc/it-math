@@ -4,29 +4,8 @@ import {
   classicCholesky,
   variantCholesky,
 } from 'chapter-2/1-cholesky-decomposition.js'
+import { multiply, transpose } from 'chapter-2/util.js'
 import { describe, expect, it } from 'vitest'
-
-/**
- * Multiply two 3x3 matrices: C = A * B
- */
-function multiply(A, B) {
-  const C = Array.from({ length: 3 }, () => [0, 0, 0])
-  for (let i = 0; i < 3; i++) {
-    for (let j = 0; j < 3; j++) {
-      for (let k = 0; k < 3; k++) {
-        C[i][j] += A[i][k] * B[k][j]
-      }
-    }
-  }
-  return C
-}
-
-/**
- * Transpose a 3x3 matrix
- */
-function transpose(M) {
-  return M[0].map((_, j) => M.map((row) => row[j]))
-}
 
 /**
  * Build a 3x3 diagonal matrix from a 1D array
