@@ -22,8 +22,6 @@ import {
   printSolution,
 } from '../src/chapter-1/10-chinese-remainder.js'
 
-// ── Helpers ──────────────────────────────────────────────────────────────
-
 const rl = createInterface({ input: process.stdin, output: process.stdout })
 
 /**
@@ -55,8 +53,9 @@ async function askN(prompt = 'Enter integer N (N > 1): ') {
   )
 }
 
-// ── Exercise Runners ─────────────────────────────────────────────────────
-
+/**
+ * Exercise runner
+ */
 const exercises = {
   1: {
     name: 'Prime Factorization',
@@ -215,8 +214,9 @@ const exercises = {
   },
 }
 
-// ── CLI Entry Point ──────────────────────────────────────────────────────
-
+/**
+ * Show help function in case the user doesn't provide any arguments
+ */
 function showHelp() {
   console.log('>>> Chapter 1 - Number Theory Exercises')
   console.log('Usage: npm run demo:ch1 <exercise>')
@@ -231,6 +231,9 @@ function showHelp() {
   console.log('  npm run demo:ch1 prime-factorization')
 }
 
+/**
+ * Main function
+ */
 async function main() {
   const arg = process.argv[2]
 
