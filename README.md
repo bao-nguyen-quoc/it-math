@@ -44,11 +44,11 @@ npm test -- tests/chapter-1/1-prime-factorization
 
 ## Exercises
 
-| #   | Name                   | Description                                                      |
-| --- | ---------------------- | ---------------------------------------------------------------- |
-| 1   | Cholesky Decomposition | Decompose a 3×3 matrix using Cholesky method (classic & variant) |
-| 2   | Matrix Diagonalization | Diagonalize a 3×3 matrix                                         |
-| 3   | SVD Decomposition      | Decompose a 3×3 matrix using Singular Value Decomposition        |
+| #   | Name                   | Description                                                       |
+| --- | ---------------------- | ----------------------------------------------------------------- |
+| 1   | Cholesky Decomposition | Decompose a 3\*3 matrix using Cholesky method (classic & variant) |
+| 2   | Matrix Diagonalization | Diagonalize a 3\*3 matrix                                         |
+| 3   | SVD Decomposition      | Decompose a 3\*3 matrix using Singular Value Decomposition        |
 
 ## How to run
 

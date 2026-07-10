@@ -31,13 +31,13 @@ function validatePositiveDefinite(A) {
   // Minor 1x1: det = A[0][0]
   const det1 = A[0][0]
   if (det1 <= 0) {
-    throw new Error(`Leading principal minor 1×1 is not positive: det=${det1}`)
+    throw new Error(`Leading principal minor 1*1 is not positive: det=${det1}`)
   }
 
   // Minor 2x2: det = A[0][0]*A[1][1] - A[0][1]^2
   const det2 = A[0][0] * A[1][1] - A[0][1] * A[1][0]
   if (det2 <= 0) {
-    throw new Error(`Leading principal minor 2×2 is not positive: det=${det2}`)
+    throw new Error(`Leading principal minor 2*2 is not positive: det=${det2}`)
   }
 
   // Minor 3x3: full determinant (cofactor expansion along first row)
@@ -46,7 +46,7 @@ function validatePositiveDefinite(A) {
     A[0][1] * (A[1][0] * A[2][2] - A[1][2] * A[2][0]) +
     A[0][2] * (A[1][0] * A[2][1] - A[1][1] * A[2][0])
   if (det3 <= 0) {
-    throw new Error(`Leading principal minor 3×3 is not positive: det=${det3}`)
+    throw new Error(`Leading principal minor 3*3 is not positive: det=${det3}`)
   }
 }
 
