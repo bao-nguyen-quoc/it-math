@@ -2,6 +2,8 @@
 // - Cổ điển
 // - Biến thể
 
+import { det2, det3 } from './util.js'
+
 /**
  * Validate that a 3x3 matrix is symmetric: A[i][j] === A[j][i] for all i ≠ j.
  * Throws an error identifying the first violating pair.
@@ -28,25 +30,22 @@ function validateSymmetric(A) {
  * @param {number[][]} A - 3x3 symmetric matrix to validate
  */
 function validatePositiveDefinite(A) {
-  // Minor 1x1: det = A[0][0]
-  const det1 = A[0][0]
-  if (det1 <= 0) {
-    throw new Error(`Leading principal minor 1×1 is not positive: det=${det1}`)
+  // Minor 1x1
+  const minor1 = A[0][0]
+  if (minor1 <= 0) {
+    throw new Error(`Leading principal minor 1x1 is not positive: det=${minor1}`)
   }
 
-  // Minor 2x2: det = A[0][0]*A[1][1] - A[0][1]^2
-  const det2 = A[0][0] * A[1][1] - A[0][1] * A[1][0]
-  if (det2 <= 0) {
-    throw new Error(`Leading principal minor 2×2 is not positive: det=${det2}`)
+  // Minor 2x2
+  const minor2 = det2(A[0][0], A[0][1], A[1][0], A[1][1])
+  if (minor2 <= 0) {
+    throw new Error(`Leading principal minor 2x2 is not positive: det=${minor2}`)
   }
 
-  // Minor 3x3: full determinant (cofactor expansion along first row)
-  const det3 =
-    A[0][0] * (A[1][1] * A[2][2] - A[1][2] * A[2][1]) -
-    A[0][1] * (A[1][0] * A[2][2] - A[1][2] * A[2][0]) +
-    A[0][2] * (A[1][0] * A[2][1] - A[1][1] * A[2][0])
-  if (det3 <= 0) {
-    throw new Error(`Leading principal minor 3×3 is not positive: det=${det3}`)
+  // Minor 3x3 (full matrix)
+  const minor3 = det3(A)
+  if (minor3 <= 0) {
+    throw new Error(`Leading principal minor 3x3 is not positive: det=${minor3}`)
   }
 }
 
@@ -88,7 +87,7 @@ function classicCholesky(A) {
 /**
  * Perform variant Cholesky (LDL^T) decomposition of a 3x3 symmetric matrix A.
  * Finds a unit lower triangular matrix L and a diagonal matrix D such that A = L * D * L^T.
- * Unlike classic Cholesky, only requires A to be symmetric — not necessarily positive definite.
+ * Unlike classic Cholesky, only requires A to be symmetric - not necessarily positive definite.
  *
  * @param {number[][]} A - 3x3 symmetric matrix (row-major array of arrays)
  * @returns {{ L: number[][], D: number[] }} - Unit lower triangular L and diagonal D (as a 1D array)
@@ -120,23 +119,4 @@ function variantCholesky(A) {
   return { L, D }
 }
 
-/**
- * Print a matrix to the console with aligned columns.
- *
- * @param {number[][]} M - Matrix to print
- * @param {string} label - Label to display above the matrix
- */
-function printMatrix(M, label) {
-  console.log(`${label}:`)
-  for (const row of M) {
-    console.log('  ' + row.map((v) => v.toFixed(2)).join('  '))
-  }
-}
-
-export {
-  validateSymmetric,
-  validatePositiveDefinite,
-  classicCholesky,
-  variantCholesky,
-  printMatrix,
-}
+export { validateSymmetric, validatePositiveDefinite, classicCholesky, variantCholesky }

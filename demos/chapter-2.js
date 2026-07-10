@@ -4,10 +4,9 @@ import {
   validatePositiveDefinite,
   classicCholesky,
   variantCholesky,
-  printMatrix,
 } from '../src/chapter-2/1-cholesky-decomposition.js'
-
-// ── Helpers ──────────────────────────────────────────────────────────────
+import { diagonalize, printDiagonalization } from '../src/chapter-2/2-matrix-diagonalization.js'
+import { printMatrix } from '../src/chapter-2/util.js'
 
 const rl = createInterface({ input: process.stdin, output: process.stdout })
 
@@ -57,8 +56,9 @@ async function askMatrix3x3(label) {
   return matrix
 }
 
-// ── Exercise Runners ─────────────────────────────────────────────────────
-
+/**
+ * Exercise runner
+ */
 const exercises = {
   1: {
     name: 'Cholesky Decomposition',
@@ -84,10 +84,29 @@ const exercises = {
       }
     },
   },
+  2: {
+    name: 'Matrix Diagonalization',
+    alias: 'matrix-diagonalization',
+    run: async () => {
+      console.log('Diagonalize a 3*3 matrix: find P and D such that A = P*D*P⁻¹')
+
+      const A = await askMatrix3x3('Enter matrix A')
+
+      printMatrix(A, 'Input matrix A')
+
+      try {
+        const result = diagonalize(A)
+        printDiagonalization(result)
+      } catch (error) {
+        console.log(error.message)
+      }
+    },
+  },
 }
 
-// ── CLI Entry Point ──────────────────────────────────────────────────────
-
+/**
+ * Show help function in case the user doesn't provide any arguments
+ */
 function showHelp() {
   console.log('>>> Chapter 2 - Matrix Decomposition Exercises')
   console.log('Usage: npm run demo:ch2 <exercise>')
@@ -102,6 +121,9 @@ function showHelp() {
   console.log('  npm run demo:ch2 cholesky-decomposition')
 }
 
+/**
+ * Main function
+ */
 async function main() {
   const arg = process.argv[2]
 
