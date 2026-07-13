@@ -6,6 +6,7 @@ import {
   variantCholesky,
 } from '../src/chapter-2/1-cholesky-decomposition.js'
 import { diagonalize, printDiagonalization } from '../src/chapter-2/2-matrix-diagonalization.js'
+import { svd, printSVD } from '../src/chapter-2/3-svd-decomposition.js'
 import { printMatrix } from '../src/chapter-2/util.js'
 
 const rl = createInterface({ input: process.stdin, output: process.stdout })
@@ -88,7 +89,7 @@ const exercises = {
     name: 'Matrix Diagonalization',
     alias: 'matrix-diagonalization',
     run: async () => {
-      console.log('Diagonalize a 3*3 matrix: find P and D such that A = P*D*P⁻¹')
+      console.log('Diagonalize a 3*3 matrix: find P and D such that A = P*D*P^(-1)')
 
       const A = await askMatrix3x3('Enter matrix A')
 
@@ -97,6 +98,24 @@ const exercises = {
       try {
         const result = diagonalize(A)
         printDiagonalization(result)
+      } catch (error) {
+        console.log(error.message)
+      }
+    },
+  },
+  3: {
+    name: 'SVD Decomposition',
+    alias: 'svd-decomposition',
+    run: async () => {
+      console.log('Decompose a 3*3 matrix using SVD: A = U * Sigma * V^T')
+
+      const A = await askMatrix3x3('Enter matrix A')
+
+      printMatrix(A, 'Input matrix A')
+
+      try {
+        const result = svd(A)
+        printSVD(result)
       } catch (error) {
         console.log(error.message)
       }

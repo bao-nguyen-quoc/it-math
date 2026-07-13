@@ -26,6 +26,59 @@ function det3(A) {
 }
 
 /**
+ * Compute the dot product of two 3-vectors.
+ *
+ * @param {number[]} u - First vector
+ * @param {number[]} v - Second vector
+ * @returns {number}
+ */
+function dot(u, v) {
+  return Array.from({ length: 3 }, (_, i) => u[i] * v[i]).reduce((acc, x) => acc + x, 0)
+}
+
+/**
+ * Multiply a 3x3 matrix by a 3-vector: result = M * v
+ *
+ * @param {number[][]} M - 3x3 matrix
+ * @param {number[]} v - 3-vector
+ * @returns {number[]} Resulting 3-vector
+ */
+function matvec(M, v) {
+  return M.map((row) => dot(row, v))
+}
+
+/**
+ * Multiply two 3x3 matrices: C = A * B
+ * @param {Array<Array<number>>} A - First 3x3 matrix
+ * @param {Array<Array<number>>} B - Second 3x3 matrix
+ * @returns {Array<Array<number>>} Resultant 3x3 matrix
+ */
+function multiply(A, B) {
+  const C = Array.from({ length: 3 }, () => [0, 0, 0])
+  for (let i = 0; i < 3; i++) {
+    for (let j = 0; j < 3; j++) {
+      for (let k = 0; k < 3; k++) {
+        C[i][j] += A[i][k] * B[k][j]
+      }
+    }
+  }
+  return C
+}
+
+/**
+ * Normalize a 3-vector to unit length.
+ * Throws if the vector is the zero vector.
+ *
+ * @param {number[]} v - Input vector
+ * @returns {number[]} Unit vector in the same direction
+ */
+function normalize(v) {
+  const norm = Math.sqrt(dot(v, v))
+  if (norm < 1e-12) throw new Error('Cannot normalize a zero vector.')
+  return v.map((x) => x / norm)
+}
+
+/**
  * Print a matrix to the console with aligned columns.
  *
  * @param {number[][]} M - Matrix to print
@@ -38,4 +91,13 @@ function printMatrix(M, label) {
   }
 }
 
-export { det2, det3, printMatrix }
+/**
+ * Transpose a 3x3 matrix
+ * @param {Array<Array<number>>} M - Input array of 3x3 matrix
+ * @returns {Array<Array<number>>} Transposed matrix
+ */
+function transpose(M) {
+  return M[0].map((_, j) => M.map((row) => row[j]))
+}
+
+export { det2, det3, dot, matvec, multiply, normalize, printMatrix, transpose }
