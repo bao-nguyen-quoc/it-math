@@ -6,6 +6,7 @@ import {
 } from 'chapter-2/1-cholesky-decomposition.js'
 import { multiply, transpose } from 'chapter-2/util.js'
 import { describe, expect, it } from 'vitest'
+import { expectMatrixClose } from './util.js'
 
 /**
  * Build a 3x3 diagonal matrix from a 1D array
@@ -16,17 +17,6 @@ function diagMatrix(D) {
     [0, D[1], 0],
     [0, 0, D[2]],
   ]
-}
-
-/**
- * Assert two 3x3 matrices are approximately equal
- */
-function expectMatrixClose(actual, expected, precision = 10) {
-  for (let i = 0; i < 3; i++) {
-    for (let j = 0; j < 3; j++) {
-      expect(actual[i][j]).toBeCloseTo(expected[i][j], precision)
-    }
-  }
 }
 
 // ── Test data ────────────────────────────────────────────────────────────

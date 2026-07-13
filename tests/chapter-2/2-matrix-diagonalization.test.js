@@ -1,20 +1,7 @@
 import { diagonalize } from 'chapter-2/2-matrix-diagonalization.js'
+import { multiply } from 'chapter-2/util.js'
 import { describe, expect, it } from 'vitest'
-
-/**
- * Multiply two 3x3 matrices: C = A * B
- */
-function multiply(A, B) {
-  const C = Array.from({ length: 3 }, () => [0, 0, 0])
-  for (let i = 0; i < 3; i++) {
-    for (let j = 0; j < 3; j++) {
-      for (let k = 0; k < 3; k++) {
-        C[i][j] += A[i][k] * B[k][j]
-      }
-    }
-  }
-  return C
-}
+import { expectMatrixClose } from './util.js'
 
 /**
  * Compute the inverse of a 3x3 matrix using the adjugate method.
@@ -36,17 +23,6 @@ function inverse3(M) {
     [(f * g - d * k) * inv, (a * k - c * g) * inv, (c * d - a * f) * inv],
     [(d * h - e * g) * inv, (b * g - a * h) * inv, (a * e - b * d) * inv],
   ]
-}
-
-/**
- * Assert two 3x3 matrices are approximately equal (element-wise).
- */
-function expectMatrixClose(actual, expected, precision = 8) {
-  for (let i = 0; i < 3; i++) {
-    for (let j = 0; j < 3; j++) {
-      expect(actual[i][j]).toBeCloseTo(expected[i][j], precision)
-    }
-  }
 }
 
 /**
