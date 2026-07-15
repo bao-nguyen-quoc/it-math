@@ -66,3 +66,31 @@ npm test -- tests/chapter-2
 # Run a specific exercise test
 npm test -- tests/chapter-2/1-cholesky-decomposition
 ```
+
+# Chapter 3
+
+## Exercises
+
+| #   | Name                | Description                                                                                                    |
+| --- | ------------------- | -------------------------------------------------------------------------------------------------------------- |
+| 1   | Convex Hull         | Find the convex hull of a set of 15 points in 2D space                                                         |
+| 2   | Area of Convex Hull | Compute the area of the convex hull using two methods: standard method and Pick's theorem (for integer coords) |
+
+## How to run
+
+Unlike chapters 1 and 2, chapter 3 exercises read input from `demos/chapter-3.input.json` since geometry problems involve many points to input.
+
+```bash
+# Run the demo for an exercise (by number or alias)
+npm run demo:ch3 <exercise>
+
+# Examples
+npm run demo:ch3 1
+npm run demo:ch3 convex-hull
+
+# Run all chapter 3 tests
+npm test -- tests/chapter-3
+
+# Run a specific exercise test
+npm test -- tests/chapter-3/1-convex-hull
+```
