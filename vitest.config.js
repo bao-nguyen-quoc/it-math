@@ -17,7 +17,13 @@ export default defineConfig({
     include: ['tests/**/*.test.js'],
     coverage: {
       provider: 'v8',
-      reporter: ['text', 'text-summary', 'html', 'lcov'],
+      reporter: [
+        'text', // for terminal
+        'lcov', // for Codecov
+        'html', // HTML report (artifact)
+        'json-summary', // for vitest-coverage-report-action
+        'json', // for vitest-coverage-report-action
+      ],
       include: ['src/**/*.js'],
       exclude: ['node_modules', 'dist', 'demos'],
     },
