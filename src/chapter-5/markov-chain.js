@@ -1,5 +1,6 @@
 // Cho 1 hệ thống có 4 trạng thái 1 - 4
 // - Xác định ma trận chuyển trạng thái P
+// - Vẽ đồ thị chuỗi markov đã cho
 // - Giả sử hệ thống bắt đầu ở trạng thái 3 tại thời điểm t=0,
 // tính xác suất hệ thống hoạt động ở trạng thái 1 sau 1, 2, và 3 bước thời gian
 

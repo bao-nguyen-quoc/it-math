@@ -2,6 +2,9 @@ import {
   validateTransitionMatrix,
   computeStateDistributions,
 } from '../src/chapter-5/markov-chain.js'
+import { exportMarkovGraph } from '../src/chapter-5/markov-chain-visualize.js'
+import { fileURLToPath } from 'node:url'
+import path from 'node:path'
 
 /**
  * Print a transition matrix with row/column labels.
@@ -90,6 +93,12 @@ const exercises = {
 
       const distributions = computeStateDistributions(P, startState, steps)
       printDistributions(distributions, targetState)
+
+      // Export Markov chain graph as SVG
+      const __dirname = path.dirname(fileURLToPath(import.meta.url))
+      const svgPath = path.join(__dirname, 'chapter-5-markov-chain.svg')
+      exportMarkovGraph(P, svgPath, 'Markov Chain - 4 States')
+      console.log(`Markov chain graph exported to: ${svgPath}`)
     },
   },
 }
