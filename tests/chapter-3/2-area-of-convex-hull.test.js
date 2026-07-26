@@ -4,7 +4,7 @@ import { describe, expect, it } from 'vitest'
 
 describe('shoelaceFormula', () => {
   it('computes area of a right triangle', () => {
-    // Triangle with vertices (0,0), (4,0), (0,3) → area = 6
+    // Triangle with vertices (0,0), (4,0), (0,3) -> area = 6
     const hull = [
       { x: 0, y: 0 },
       { x: 4, y: 0 },
@@ -14,7 +14,7 @@ describe('shoelaceFormula', () => {
   })
 
   it('computes area of a unit square', () => {
-    // CCW order: (0,0) → (1,0) → (1,1) → (0,1)
+    // CCW order: (0,0) -> (1,0) -> (1,1) -> (0,1)
     const hull = [
       { x: 0, y: 0 },
       { x: 1, y: 0 },
@@ -25,7 +25,7 @@ describe('shoelaceFormula', () => {
   })
 
   it('computes area of a larger square', () => {
-    // 4×4 square → area = 16
+    // 4x4 square -> area = 16
     const hull = [
       { x: 0, y: 0 },
       { x: 4, y: 0 },
@@ -36,7 +36,7 @@ describe('shoelaceFormula', () => {
   })
 
   it('works with CW vertex order (absolute value)', () => {
-    // CW order: (0,0) → (0,3) → (4,0)
+    // CW order: (0,0) -> (0,3) -> (4,0)
     const hull = [
       { x: 0, y: 0 },
       { x: 0, y: 3 },
@@ -60,7 +60,7 @@ describe('shoelaceFormula', () => {
 
 describe('pickTheorem', () => {
   it('computes area of a right triangle', () => {
-    // Triangle (0,0), (4,0), (0,3) → area = 6
+    // Triangle (0,0), (4,0), (0,3) -> area = 6
     const hull = [
       { x: 0, y: 0 },
       { x: 4, y: 0 },

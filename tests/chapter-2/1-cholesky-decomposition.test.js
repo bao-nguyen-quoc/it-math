@@ -19,8 +19,6 @@ function diagMatrix(D) {
   ]
 }
 
-// ── Test data ────────────────────────────────────────────────────────────
-
 // Symmetric positive definite (from the demo run)
 const SPD_1 = [
   [4, 12, -16],
@@ -48,8 +46,6 @@ const NON_SYMMETRIC = [
   [4, 5, 6],
   [7, 8, 9],
 ]
-
-// ── Tests ────────────────────────────────────────────────────────────────
 
 describe('validateSymmetric', () => {
   it('passes for a symmetric matrix', () => {

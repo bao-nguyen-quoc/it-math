@@ -70,7 +70,7 @@ function pickTheorem(hull) {
 
   const n = hull.length
 
-  // B: boundary lattice points – for each edge, gcd(|dx|, |dy|) gives the count
+  // B: boundary lattice points - for each edge, gcd(|dx|, |dy|) gives the count
   const B = Array.from({ length: n }, (_, i) => {
     const cur = hull[i]
     const nxt = hull[(i + 1) % n]
