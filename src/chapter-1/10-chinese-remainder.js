@@ -1,8 +1,8 @@
 // Giải bài toán số dư Trung Hoa với hệ 4 phương trình
-// x ≡ a1 (mod m1)
-// x ≡ a2 (mod m2)
-// x ≡ a3 (mod m3)
-// x ≡ a4 (mod m4)
+// x == a1 (mod m1)
+// x == a2 (mod m2)
+// x == a3 (mod m3)
+// x == a4 (mod m4)
 // Các số a1, a2, a3, a4, m1, m2, m3, m4 nhập từ bàn phím.
 // Các số m1, m2, m3, m4 đôi một nguyên tố cùng nhau.
 
@@ -10,7 +10,7 @@ import { gcdByEuclid } from './8-gcd-lcm.js'
 
 /**
  * Compute the modular inverse of a modulo m using the Extended Euclidean algorithm.
- * Returns x such that a * x ≡ 1 (mod m).
+ * Returns x such that a * x == 1 (mod m).
  * Assumes gcd(a, m) = 1.
  *
  * @param {number} a
@@ -50,7 +50,7 @@ function validatePairwiseCoprime(equations) {
 /**
  * Solve a system of congruences using the Chinese Remainder Theorem (CRT).
  *
- * Input is an array of equation objects { a, m } representing x ≡ a (mod m).
+ * Input is an array of equation objects { a, m } representing x == a (mod m).
  * All moduli must be pairwise coprime.
  *
  * @param {{ a: number, m: number }[]} equations - Array of congruence equations
@@ -80,9 +80,9 @@ function chineseRemainder(equations) {
 function printSolution(equations, { x, M }) {
   console.log('System of congruences:')
   for (const { a, m } of equations) {
-    console.log(`  x ≡ ${a}(mod ${m})`)
+    console.log(`  x == ${a}(mod ${m})`)
   }
-  console.log(`Solution: x ≡ ${x}(mod ${M})`)
+  console.log(`Solution: x == ${x}(mod ${M})`)
 }
 
 export { validatePairwiseCoprime, chineseRemainder, printSolution }

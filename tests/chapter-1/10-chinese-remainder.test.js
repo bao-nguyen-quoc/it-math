@@ -2,7 +2,7 @@ import { validatePairwiseCoprime, chineseRemainder } from 'chapter-1/10-chinese-
 import { describe, expect, it } from 'vitest'
 
 describe('chineseRemainder', () => {
-  it("Slide's example: x ≡ 2 (mod 3), x ≡ 3 (mod 5), x ≡ 2 (mod 7)", () => {
+  it("Slide's example: x == 2 (mod 3), x == 3 (mod 5), x == 2 (mod 7)", () => {
     const equations = [
       { a: 2, m: 3 },
       { a: 3, m: 5 },
@@ -18,7 +18,7 @@ describe('chineseRemainder', () => {
   })
 
   it('solves a 2-equation system', () => {
-    // x ≡ 1 (mod 3), x ≡ 2 (mod 5)
+    // x == 1 (mod 3), x == 2 (mod 5)
     const equations = [
       { a: 1, m: 3 },
       { a: 2, m: 5 },
@@ -32,7 +32,7 @@ describe('chineseRemainder', () => {
   })
 
   it('handles a_i = 0 cases', () => {
-    // x ≡ 0 (mod 3), x ≡ 0 (mod 5), x ≡ 0 (mod 7)
+    // x == 0 (mod 3), x == 0 (mod 5), x == 0 (mod 7)
     const equations = [
       { a: 0, m: 3 },
       { a: 0, m: 5 },

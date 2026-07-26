@@ -4,7 +4,7 @@ import { describe, expect, it } from 'vitest'
 import { expectMatrixClose } from './util.js'
 
 /**
- * Assert a matrix is diagonal (off-diagonal entries ≈ 0).
+ * Assert a matrix is diagonal (off-diagonal entries ~= 0).
  */
 function expectDiagonal(M) {
   for (let i = 0; i < 3; i++) {
@@ -17,7 +17,7 @@ function expectDiagonal(M) {
 }
 
 /**
- * Assert a 3x3 matrix is orthogonal: M^T * M ≈ I.
+ * Assert a 3x3 matrix is orthogonal: M^T * M ~= I.
  */
 function expectOrthogonal(M) {
   const MtM = multiply(transpose(M), M)
@@ -30,14 +30,14 @@ function expectOrthogonal(M) {
 }
 
 /**
- * Verify SVD: A ≈ U * Sigma * V^T.
+ * Verify SVD: A ~= U * Sigma * V^T.
  */
 function verifySVD(A, { U, Sigma, V }) {
   const reconstructed = multiply(multiply(U, Sigma), transpose(V))
   expectMatrixClose(reconstructed, A)
 }
 
-// Diagonal matrix — singular values are the absolute diagonal entries
+// Diagonal matrix - singular values are the absolute diagonal entries
 const DIAGONAL = [
   [3, 0, 0],
   [0, 5, 0],

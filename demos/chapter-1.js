@@ -180,7 +180,7 @@ const exercises = {
     alias: 'chinese-remainder',
     run: async () => {
       console.log('Solve the system of congruences:')
-      console.log('  x ≡ a_i (mod m_i)  for i = 1..k')
+      console.log('  x == a_i (mod m_i)  for i = 1..k')
 
       // const k = await askInteger(
       //   'How many equations? (k >= 2): ',

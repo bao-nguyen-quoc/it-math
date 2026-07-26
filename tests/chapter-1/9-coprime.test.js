@@ -8,7 +8,7 @@ describe('countCoprime (Euler totient)', () => {
     [210, 48],
     [360, 96],
     [1000, 400],
-  ])('φ(%i) = %i', (n, expected) => {
+  ])('phi(%i) = %i', (n, expected) => {
     expect(countCoprime(n)).toBe(expected)
   })
 })
