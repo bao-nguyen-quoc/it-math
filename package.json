@@ -23,6 +23,7 @@
     "demo:ch1": "node demos/chapter-1.js",
     "demo:ch2": "node demos/chapter-2.js",
     "demo:ch3": "node demos/chapter-3.js",
+    "demo:ch4": "node demos/chapter-4.js",
     "demo:ch5": "node demos/chapter-5.js",
     "prepare": "husky"
   },
@@ -45,5 +46,8 @@
     "**/*.{json,md}": [
       "prettier --write"
     ]
+  },
+  "dependencies": {
+    "mathjs": "^15.2.0"
   }
 }

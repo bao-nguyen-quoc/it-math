@@ -95,6 +95,33 @@ npm test -- tests/chapter-3
 npm test -- tests/chapter-3/1-convex-hull
 ```
 
+# Chapter 4
+
+## Exercises
+
+| #   | Name                           | Description                                                     |
+| --- | ------------------------------ | --------------------------------------------------------------- |
+| 1   | Gradient Descent               | Find local minimum of f(x) using gradient descent optimization  |
+| 2   | Gradient Descent with Momentum | Find local minimum of f(x) using gradient descent with momentum |
+| 3   | Newton's Method                | Find local minimum of f(x) using Newton's optimization method   |
+
+## How to run
+
+```bash
+# Run the demo for an exercise (by number or alias)
+npm run demo:ch4 <exercise>
+
+# Examples
+npm run demo:ch4 1
+npm run demo:ch4 gradient-descent
+
+# Run all chapter 4 tests
+npm test -- tests/chapter-4
+
+# Run a specific exercise test
+npm test -- tests/chapter-4/gradient-descent
+```
+
 # Chapter 5
 
 ## Exercises
