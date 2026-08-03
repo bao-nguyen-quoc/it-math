@@ -56,7 +56,7 @@ function svd(A) {
  */
 function printSVD({ U, Sigma, V }) {
   const sigmas = [Sigma[0][0], Sigma[1][1], Sigma[2][2]]
-  console.log('Singular values: ' + sigmas.map((v) => v.toFixed(4)).join(', '))
+  console.log('Singular values: ' + sigmas.map((v) => v.toFixed(2)).join(', '))
   printMatrix(U, 'U (left singular vectors as columns)')
   printMatrix(Sigma, 'Sigma (diagonal singular values)')
   printMatrix(transpose(V), 'V^T (right singular vectors as rows)')

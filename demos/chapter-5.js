@@ -43,7 +43,7 @@ function printDistributions(distributions, targetState) {
   console.log(headers.map(fmt).join(''))
   console.log(divider)
   for (const { step, pi } of distributions) {
-    const cols = [step, ...pi.map((v) => v.toFixed(4)), pi[targetState - 1].toFixed(4)]
+    const cols = [step, ...pi.map((v) => v.toFixed(2)), pi[targetState - 1].toFixed(2)]
     console.log(cols.map(fmt).join(''))
   }
   console.log(divider)
