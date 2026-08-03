@@ -69,7 +69,7 @@ const exercises = {
       // x0 = 3 is when I retried and get minimum.
 
       const x0 = 3
-      const alpha = 0.05
+      const alpha = 1
 
       console.log(`f(x)  = ${expression}`)
       console.log(`x0    = ${x0}`)
