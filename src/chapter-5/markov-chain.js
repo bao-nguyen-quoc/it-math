@@ -69,7 +69,7 @@ function validateTransitionMatrix(P, tolerance = 1e-9) {
 
     const rowSum = P[i].reduce((s, v) => s + v, 0)
     if (Math.abs(rowSum - 1) > tolerance)
-      errors.push(`Row ${i + 1} sums to ${rowSum.toFixed(6)}, expected 1`)
+      errors.push(`Row ${i + 1} sums to ${rowSum.toFixed(2)}, expected 1`)
   }
 
   return { valid: errors.length === 0, errors }

@@ -12,25 +12,6 @@ import { printMatrix } from '../src/chapter-2/util.js'
 const rl = createInterface({ input: process.stdin, output: process.stdout })
 
 /**
- * Prompt the user for a number (integer or float), re-asking on invalid input.
- * @param {string} prompt - The prompt message
- * @returns {Promise<number>}
- */
-// eslint-disable-next-line no-unused-vars
-async function askNumber(prompt) {
-  while (true) {
-    const input = await rl.question(prompt)
-    const n = Number(input.trim())
-
-    if (Number.isNaN(n)) {
-      console.error(`Invalid value: "${input.trim()}". Please enter a valid number.`)
-    } else {
-      return n
-    }
-  }
-}
-
-/**
  * Prompt the user to input a 3x3 matrix row by row.
  * Each row is entered as 3 space-separated numbers.
  * @param {string} label - Label to display before asking

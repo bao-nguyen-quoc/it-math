@@ -151,7 +151,7 @@ function diagonalize(A) {
 
   if (lambdas.length === 1) {
     throw new Error(
-      `Matrix is not diagonalizable over R: characteristic polynomial has complex roots (only 1 real eigenvalue lambda=${lambdas[0].toFixed(4)}).`,
+      `Matrix is not diagonalizable over R: characteristic polynomial has complex roots (only 1 real eigenvalue lambda=${lambdas[0].toFixed(2)}).`,
     )
   }
 
@@ -170,7 +170,7 @@ function diagonalize(A) {
 
     if (basis.length === 0) {
       throw new Error(
-        `Matrix is not diagonalizable: eigenspace for lambda=${lambda.toFixed(4)} is empty (numerical error).`,
+        `Matrix is not diagonalizable: eigenspace for lambda=${lambda.toFixed(2)} is empty (numerical error).`,
       )
     }
 

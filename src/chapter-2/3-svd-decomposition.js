@@ -26,16 +26,22 @@ function svd(A) {
 
   // Step 2: Diagonalize B -> columns of P are eigenvectors, diagonal of D are eigenvalues
   const { P, D } = diagonalize(B)
-  const lambdas = [D[0][0], D[1][1], D[2][2]]
+
+  const pairs = [0, 1, 2]
+    .map((j) => ({
+      lambda: D[j][j],
+      vec: [P[0][j], P[1][j], P[2][j]],
+    }))
+    .sort((a, b) => b.lambda - a.lambda)
 
   // Step 3: Normalize each eigenvector column of P -> columns of V
-  const V_cols = [0, 1, 2].map((j) => normalize([P[0][j], P[1][j], P[2][j]]))
+  const V_cols = pairs.map(({ vec }) => normalize(vec))
 
   // V: column j = V_cols[j]  ->  V[row][col] = V_cols[col][row]
   const V = [0, 1, 2].map((i) => V_cols.map((col) => col[i]))
 
   // Step 4: Singular values sigma_i = sqrt(lambda_i)
-  const sigmas = lambdas.map((lam) => Math.sqrt(lam))
+  const sigmas = pairs.map(({ lambda }) => Math.sqrt(Math.max(0, lambda)))
 
   // Step 5: Left singular vectors u_i = A * v_i / sigma_i
   const U_cols = [0, 1, 2].map((i) => normalize(matvec(A, V_cols[i])))
@@ -56,7 +62,7 @@ function svd(A) {
  */
 function printSVD({ U, Sigma, V }) {
   const sigmas = [Sigma[0][0], Sigma[1][1], Sigma[2][2]]
-  console.log('Singular values: ' + sigmas.map((v) => v.toFixed(4)).join(', '))
+  console.log('Singular values: ' + sigmas.map((v) => v.toFixed(2)).join(', '))
   printMatrix(U, 'U (left singular vectors as columns)')
   printMatrix(Sigma, 'Sigma (diagonal singular values)')
   printMatrix(transpose(V), 'V^T (right singular vectors as rows)')
