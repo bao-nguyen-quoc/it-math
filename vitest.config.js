@@ -19,6 +19,7 @@ export default defineConfig({
       provider: 'v8',
       reporter: [
         'text', // for terminal
+        'text-summary',
         'lcov', // for Codecov
         'html', // HTML report (artifact)
         'json-summary', // for vitest-coverage-report-action
