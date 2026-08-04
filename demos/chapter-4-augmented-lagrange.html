@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8"/>
+  <title>Augmented Lagrangian Method</title>
+  <style>
+    body { font-family: 'Courier New', monospace; padding: 2rem; background: #f5f5f5; color: #111; }
+    h2   { margin-bottom: 0.25rem; font-size: 1.3rem; }
+    .subtitle { color: #555; font-size: 0.85rem; margin-bottom: 1.5rem; }
+    table { border-collapse: collapse; width: 100%; max-width: 680px; }
+    th, td { border: 1px solid #bbb; padding: 0.4rem 0.9rem; text-align: right; font-size: 0.88rem; }
+    thead th { background: #1a1a2e; color: #e0e0e0; font-weight: normal; letter-spacing: 0.04em; }
+    tr:nth-child(even) td { background: #ebebeb; }
+    td.converged { color: #166534; font-weight: bold; }
+    .solution { margin-top: 1.5rem; padding: 1rem 1.4rem; background: #fff;
+                border: 1px solid #bbb; max-width: 680px; border-radius: 2px; }
+    .solution h3 { margin: 0 0 0.6rem; font-size: 1rem; }
+    .solution p  { margin: 0.2rem 0; font-size: 0.88rem; }
+  </style>
+</head>
+<body>
+  <h2>Augmented Lagrangian Method</h2>
+  <p class="subtitle">Minimise f(x₁, x₂) &nbsp;·&nbsp; subject to h(x₁, x₂) = 0</p>
+  <table>
+    <thead>
+      <tr>
+        <th>k</th>
+        <th>λ<sup>(k)</sup></th><th>r<sub>k</sub></th>
+        <th>x₁*<sup>(k)</sup></th><th>x₂*<sup>(k)</sup></th>
+        <th>Value of h</th>
+      </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>1</td>
+      <td>0.00000</td>
+      <td>1.00000</td>
+      <td>25.13274</td>
+      <td>-9.25310</td>
+      <td class="">4.62655</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>9.25310</td>
+      <td>1.00000</td>
+      <td>25.13274</td>
+      <td>-11.10372</td>
+      <td class="">0.92531</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>11.10372</td>
+      <td>1.00000</td>
+      <td>25.13274</td>
+      <td>-11.47384</td>
+      <td class="">0.18506</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>11.47384</td>
+      <td>1.00000</td>
+      <td>25.13274</td>
+      <td>-11.54786</td>
+      <td class="">0.03701</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>11.54786</td>
+      <td>1.00000</td>
+      <td>25.13274</td>
+      <td>-11.56267</td>
+      <td class="">0.00740</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>11.56267</td>
+      <td>1.00000</td>
+      <td>25.13274</td>
+      <td>-11.56563</td>
+      <td class="">0.00148</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>11.56563</td>
+      <td>1.00000</td>
+      <td>25.13274</td>
+      <td>-11.56622</td>
+      <td class="">0.00030</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>11.56622</td>
+      <td>1.00000</td>
+      <td>25.13274</td>
+      <td>-11.56634</td>
+      <td class="converged">0.00006</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td>11.56634</td>
+      <td>1.00000</td>
+      <td>25.13274</td>
+      <td>-11.56636</td>
+      <td class="converged">0.00001</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td>11.56636</td>
+      <td>1.00000</td>
+      <td>25.13274</td>
+      <td>-11.56637</td>
+      <td class="converged">0.00000</td>
+    </tr></tbody>
+  </table>
+  <div class="solution">
+    <h3>Nghiệm tìm được</h3>
+    <p>x₁* = 25.13274</p>
+    <p>x₂* = -11.56637</p>
+    <p>f(x*) = 133.78090</p>
+    <p>h(x*) = 0.00000</p>
+  </div>
+</body>
+</html>

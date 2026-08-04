@@ -99,11 +99,12 @@ npm test -- tests/chapter-3/1-convex-hull
 
 ## Exercises
 
-| #   | Name                           | Description                                                     |
-| --- | ------------------------------ | --------------------------------------------------------------- |
-| 1   | Gradient Descent               | Find local minimum of f(x) using gradient descent optimization  |
-| 2   | Gradient Descent with Momentum | Find local minimum of f(x) using gradient descent with momentum |
-| 3   | Newton's Method                | Find local minimum of f(x) using Newton's optimization method   |
+| #   | Name                           | Description                                                                     |
+| --- | ------------------------------ | ------------------------------------------------------------------------------- |
+| 1   | Gradient Descent               | Find local minimum of f(x) using gradient descent optimization                  |
+| 2   | Gradient Descent with Momentum | Find local minimum of f(x) using gradient descent with momentum                 |
+| 3   | Newton's Method                | Find local minimum of f(x) using Newton's optimization method                   |
+| 4   | Non-Linear Programming (ALM)   | Solve constrained multi-variable optimisation via Augmented Lagrange Multiplier |
 
 ## How to run
 
