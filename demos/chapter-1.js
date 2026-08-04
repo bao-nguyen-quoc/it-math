@@ -3,7 +3,7 @@ import { primeFactors, formatFactorization } from '../src/chapter-1/1-prime-fact
 import { countDivisors, listDivisors } from '../src/chapter-1/2-number-of-divisors.js'
 import { sumDivisors } from '../src/chapter-1/3-sum-of-divisors.js'
 import { productDivisors } from '../src/chapter-1/4-product-of-divisors.js'
-import { isPerfect, isPerfectBruteForce } from '../src/chapter-1/5-perfect-number.js'
+import { isPerfect, isPerfectEvenMersenne } from '../src/chapter-1/5-perfect-number.js'
 import {
   sieveOfEratosthenes,
   approximateNumberOfPrimes,
@@ -110,8 +110,8 @@ const exercises = {
       const n = await askN()
       let result = isPerfect(n)
       console.log(`${n} is${result ? '' : ' not'} a perfect number.`)
-      result = isPerfectBruteForce(n)
-      console.log(`${n} is${result ? '' : ' not'} a perfect number (brute force calc).`)
+      result = isPerfectEvenMersenne(n)
+      console.log(`${n} is${result ? '' : ' not'} a perfect number (Mersenne check).`)
     },
   },
 
