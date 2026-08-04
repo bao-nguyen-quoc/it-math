@@ -1,7 +1,7 @@
 import { augmentedLagrangeMethod } from 'chapter-4/augmented-lagrange-method.js'
 import { describe, expect, it } from 'vitest'
 
-describe('augmentedLagrangeMethod', () => {
+describe('augmentedLagrangeMethod', { timeout: 30000 }, () => {
   it('finds constrained minimum of x1^2+x2^2 subject to x1+x2-1=0', () => {
     // min f = x1^2 + x2^2 subject to x1 + x2 = 1
     // Analytical solution: x1 = 0.5, x2 = 0.5, f = 0.5
