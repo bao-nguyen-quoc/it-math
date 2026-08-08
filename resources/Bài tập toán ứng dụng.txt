@@ -14,7 +14,7 @@ Chương 2: Đại số tuyến tính
  - Cho ma trận A kích thước 3 x 3, thực hiện:
 1. Phân rã ma trận bằng phương pháp Cholesky cổ điển và biến thể
 2. Chéo hoá ma trận đã cho
-3. Phân rã ma trận bằng phương pháp SCD (Singular value decomposition)
+3. Phân rã ma trận bằng phương pháp SVD (Singular value decomposition)
 // ---
 Chương 3: Hình học
  - Cho tập điểm trong không gian 2D (tối thiểu 15 điểm)
