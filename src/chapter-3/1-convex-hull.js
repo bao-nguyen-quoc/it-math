@@ -6,9 +6,9 @@
  * = 0: collinear
  * < 0: clockwise (right turn)
  *
- * @param {{ x: number, y: number }} O
- * @param {{ x: number, y: number }} A
- * @param {{ x: number, y: number }} B
+ * @param {{ x: number, y: number }} O - origin
+ * @param {{ x: number, y: number }} A - first point
+ * @param {{ x: number, y: number }} B - second point
  * @returns {number}
  */
 function cross(O, A, B) {
@@ -72,4 +72,4 @@ function printHull(hull) {
   })
 }
 
-export { convexHull, printHull }
+export { cross, convexHull, printHull }
