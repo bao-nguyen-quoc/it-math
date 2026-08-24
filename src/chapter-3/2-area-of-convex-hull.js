@@ -3,6 +3,7 @@
 // Cách 2: Pick's theorem, áp dụng khi các điểm có toạ độ số nguyên.
 
 import { gcdByEuclid } from '../chapter-1/8-gcd-lcm.js'
+import { cross } from './1-convex-hull.js'
 
 /**
  * Check whether every point in an array has integer x and y coordinates.
@@ -45,7 +46,7 @@ function isInterior(hull, p) {
   const n = hull.length
   return hull.every((cur, i) => {
     const nxt = hull[(i + 1) % n]
-    return (nxt.x - cur.x) * (p.y - cur.y) - (nxt.y - cur.y) * (p.x - cur.x) > 0
+    return cross(cur, nxt, p) > 0
   })
 }
 
