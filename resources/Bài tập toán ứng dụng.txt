@@ -1,0 +1,35 @@
+Chương 1: Lý thuyết số
+1. Viết chương trình phân tích số nguyên N (N > 1) thành tích các thừa số nguyên tố.
+2. Nhập N từ bàn phím, tìm số lượng các ước số của N.
+3. Tính tổng các ước số của N nhập từ bàn phím.
+4. Tính tích các ước số của N nhập từ bàn phím.
+5. Kiểm tra số N có phải số hoàn hảo hay không bằng 2 cách (theo slide)
+6. Nhập số N với N > 10^6, xác định gần đúng số lượng các số nguyên tố nhỏ hơn N bằng 2 cách khác nhau.
+7. Viết chương trình liệt kê các số nguyên số sử dụng thuật toán sàng Eratosthenes.
+8. Tìm UCLN và BCNN của hai số a và b bằng 2 cách khác nhau.
+9. Nhập N từ bàn phím (N >= 100), tìm số lượng và liệt kê các số nguyên tố cùng nhau với N. Sử dụng hàm phi Euler.
+10. Giải bài toán số dư trung hoa cho hệ phương trình đồng dư (hệ gồm 4 phương trình)
+// ---
+Chương 2: Đại số tuyến tính
+ - Cho ma trận A kích thước 3 x 3, thực hiện:
+1. Phân rã ma trận bằng phương pháp Cholesky cổ điển và biến thể
+2. Chéo hoá ma trận đã cho
+3. Phân rã ma trận bằng phương pháp SVD (Singular value decomposition)
+// ---
+Chương 3: Hình học
+ - Cho tập điểm trong không gian 2D (tối thiểu 15 điểm)
+1. Viết chương trình xác định bao lồi (convex hull)
+2. Tính diện tích bao lồi bằng 2 cách khác nhau
+// ---
+Chương 4: Tối ưu
+ - Cho hàm số có dạng phân thức, chứa các hàm mũ và các hàm siêu việt (e.g. lượng giác, logarit, ...)
+1. Tìm min của f(x) bằng phương pháp Gradient Descent
+2. Tìm min của f(x) bằng phương pháp Gradient Descent with momentum
+3. Tìm min của f(x) bằng phương pháp Newton
+4. Hiện thực hoá bài toán quy hoạch không tuyến tính
+// ---
+Chương 5: Xác suất
+ - Cho 1 hệ thống có các trạng thái từ 1 đến 4
+1. Xác định ma trận chuyển trạng thái
+2. Vẽ đồ thị chuỗi Markov đã cho
+3. Giả sử hệ thống bắt đầu ở trạng thái số 3, tính xác suất ở trạng thái số 1 sau 1, 2 và 3 bước thời gian làm việc.
